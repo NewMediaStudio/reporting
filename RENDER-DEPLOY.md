@@ -1,21 +1,25 @@
 # 🚀 Deploy to Render.com (Free, No Credit Card Required)
 
 ## Step 1: Go to Render
+
 1. Visit [render.com](https://render.com)
 2. **Sign up** with your GitHub account
 3. **No credit card required** for free tier
 
 ## Step 2: Create New Web Service
+
 1. Click **"New +"** button
 2. Select **"Web Service"**
 3. Click **"Connect your GitHub repository"**
 
 ## Step 3: Connect Your Repository
+
 1. **Select your `reporting` repository**
 2. **Choose the `main` branch**
 3. Click **"Connect"**
 
 ## Step 4: Configure the Service
+
 1. **Name**: `reporting-metabase`
 2. **Environment**: `Docker`
 3. **Region**: Choose closest to you
@@ -25,6 +29,7 @@
 7. **Start Command**: Leave empty (uses Dockerfile)
 
 ## Step 5: Deploy
+
 1. Click **"Create Web Service"**
 2. **Wait 3-5 minutes** for build and deployment
 3. **Get your public URL** like: `https://reporting-metabase.onrender.com`
@@ -46,6 +51,7 @@
 ## 📱 Share with Others
 
 Once deployed, share your Render URL:
+
 ```
 https://reporting-metabase.onrender.com
 ```
@@ -53,16 +59,19 @@ https://reporting-metabase.onrender.com
 ## 🚨 Troubleshooting
 
 ### Build Fails
+
 - Check the build logs in Render dashboard
 - Ensure Dockerfile is correct
 - Verify repository connection
 
 ### App Won't Start
+
 - Check the deployment logs
 - Verify health check path is correct
 - Wait for full initialization (3-5 minutes)
 
 ## 💰 Cost
+
 - **Free tier**: $0/month
 - **No credit card required**
 - **No time limits**
