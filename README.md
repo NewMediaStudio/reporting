@@ -11,7 +11,7 @@ This project sets up a complete Metabase instance with sample data for prototypi
 
 ### 1. Start the Services
 ```bash
-docker-compose up -d
+./start.sh
 ```
 
 ### 2. Access Metabase
@@ -97,7 +97,7 @@ When you're ready to connect to your internal data source:
 
 ```bash
 # Start services
-docker-compose up -d
+./start.sh
 
 # View logs
 docker-compose logs -f metabase

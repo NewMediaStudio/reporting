@@ -1,0 +1,21 @@
+{
+  "name": "reporting",
+  "version": "1.0.0",
+  "description": "This project sets up a complete Metabase instance with sample data for prototyping business intelligence dashboards. Metabase is a free, open-source business intelligence tool that allows you to explore and visualize your data.",
+  "main": "test-embed.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewMediaStudio/reporting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/NewMediaStudio/reporting/issues"
+  },
+  "homepage": "https://github.com/NewMediaStudio/reporting#readme"
+}
