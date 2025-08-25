@@ -9,11 +9,9 @@ primary_region = 'iad'
 [build]
 
 [env]
-  PORT = '8080'
   MB_JETTY_HOST = '0.0.0.0'
-
-[processes]
-  app = "java -jar /app/metabase.jar"
+  MB_DB_TYPE = 'h2'
+  MB_DB_FILE = '/metabase-data/metabase.db.mv.db'
 
 [http_service]
   internal_port = 3000
@@ -21,7 +19,6 @@ primary_region = 'iad'
   auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
-  processes = ['app']
 
   [[http_service.checks]]
     interval = '30s'
