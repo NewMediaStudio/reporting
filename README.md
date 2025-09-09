@@ -63,6 +63,37 @@ The prototype includes a complete e-commerce dataset with:
 - Comparative metrics
 - Actionable insights
 
+## 🌐 Embedding Your Dashboards
+
+### Quick Embed Test
+1. **Start the HTTP server**: `./serve-simple.sh`
+2. **Open**: http://localhost:8000/test-embed.html
+3. **See**: Your logo + embedded dashboard
+
+### Customize the Embed
+- **Logo**: Replace `logo.png` with your own logo
+- **Dashboard URL**: Update the iframe src in `test-embed.html`
+- **Styling**: Modify CSS in the HTML file
+
+### Generate Signed URLs (Advanced)
+For production use, generate signed JWT tokens:
+
+```javascript
+const jwt = require("jsonwebtoken");
+
+const METABASE_SITE_URL = "http://localhost:3000";
+const METABASE_SECRET_KEY = "YOUR_SECRET_KEY";
+
+const payload = {
+  resource: { dashboard: 1 },
+  params: {},
+  exp: Math.round(Date.now() / 1000) + (10 * 60)
+};
+
+const token = jwt.sign(payload, METABASE_SECRET_KEY);
+const iframeUrl = METABASE_SITE_URL + "/embed/dashboard/" + token;
+```
+
 ## 🔧 Configuration
 
 ### Environment Variables
@@ -75,6 +106,7 @@ The prototype includes a complete e-commerce dataset with:
 ### Ports
 - **Metabase**: 3000 (Web interface)
 - **PostgreSQL**: 5432 (Database access)
+- **HTTP Server**: 8000 (For testing embeds)
 
 ## 📈 Creating Your First Dashboard
 
@@ -98,6 +130,9 @@ When you're ready to connect to your internal data source:
 ```bash
 # Start services
 ./start.sh
+
+# Start HTTP server for testing embeds
+./serve-simple.sh
 
 # View logs
 docker-compose logs -f metabase
@@ -130,6 +165,11 @@ docker exec -it metabase-postgres psql -U metabase -d sample_data
 - Verify PostgreSQL is running: `docker-compose ps`
 - Check database logs: `docker-compose logs postgres`
 - Ensure sample data was loaded correctly
+
+### Iframe connection issues
+- Use the HTTP server: `./serve-simple.sh`
+- Open http://localhost:8000/test-embed.html instead of file://
+- Check that Metabase embedding is enabled in Admin → Settings
 
 ### Performance issues
 - Increase Docker memory allocation
